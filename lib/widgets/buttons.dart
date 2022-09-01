@@ -15,11 +15,12 @@ class PrimaryButton extends StatelessWidget {
       child: ElevatedButton(
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(
-            secondaryColor,
+            primaryColor,
           ),
+          elevation: MaterialStateProperty.all(8),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25),
+              borderRadius: BorderRadius.circular(20),
             ),
           ),
         ),
@@ -67,7 +68,7 @@ class SeccondaryButton extends StatelessWidget {
           backgroundColor: MaterialStateProperty.all(Colors.white),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25),
+              borderRadius: BorderRadius.circular(20),
             ),
           ),
         ),
@@ -85,6 +86,25 @@ class SeccondaryButton extends StatelessWidget {
             : _buildText(),
         onPressed: () {},
       ),
+    );
+  }
+}
+
+class MyFloatingActionButton extends StatelessWidget {
+  final Icon icon;
+
+  const MyFloatingActionButton(
+    this.icon, {
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: () {},
+      backgroundColor: Colors.white,
+      elevation: 5,
+      child: icon,
     );
   }
 }

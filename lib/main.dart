@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_wioso/const.dart';
+import 'package:flutter_wioso/screens/mapScreen.dart';
 import 'package:flutter_wioso/screens/singScreen.dart';
 
 void main() {
@@ -17,8 +18,11 @@ class MyApp extends StatelessWidget {
       title: 'Wioso',
       theme: ThemeData(
         primaryColor: primaryColor,
+        colorScheme: ThemeData().colorScheme.copyWith(
+              primary: primaryColor,
+            ),
       ),
-      home: const SignScreen(),
+      home: const MapScreen(),
     );
   }
 }
